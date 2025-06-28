@@ -3,5 +3,11 @@ export interface Book {
   authorship: string;
   image: string;
   favorite: boolean;
-  gender: string;
+  gender: GenreLiterary;
+}
+
+export interface GenreLiterary {
+  id: string;
+  value: string;
+  book: Book[];
 }
