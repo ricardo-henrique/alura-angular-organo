@@ -1,0 +1,20 @@
+<section class="generos" [ngClass]="genrer().id">
+  <h3 class="texto-h3-prata">
+    {{ genrer().value }}
+    <span
+      class="linha-destaque linha-destaque--pequena"
+      [ngClass]="genrer().id"
+    ></span>
+  </h3>
+  @if (genrer().book.length === 0) {
+  <div class="texto-sem-livros">
+    <img src="sem-livros.png" alt="Sem livros neste genero" />
+    <p>Não há livros neste genero ainda</p>
+  </div>
+  }
+  <div class="livros-genero">
+    @for (book of genrer().book; track book) {
+    <app-book [book]="book"></app-book>
+    }
+  </div>
+</section>
